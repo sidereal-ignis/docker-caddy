@@ -1,10 +1,10 @@
-FROM golang:1.9
+FROM golang:1.10
 
 RUN set -x \
  && go get github.com/caddyserver/builds \
  && go get github.com/mholt/caddy/caddy  \
  && cd /go/src/github.com/mholt/caddy    \
- && git checkout -b v0.10.10 \
+ && git checkout -b v0.10.11 \
  && cd caddy        \
  && go run build.go \
  && mkdir -p /go/opt/bin \
