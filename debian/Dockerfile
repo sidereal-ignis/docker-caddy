@@ -4,7 +4,7 @@ RUN set -x \
  && go get github.com/caddyserver/builds \
  && go get github.com/mholt/caddy/caddy  \
  && cd /go/src/github.com/mholt/caddy    \
- && git checkout -b v0.10.12 \
+ && git checkout -b v0.10.14 \
  && cd caddy        \
  && go run build.go \
  && mkdir -p /go/opt/bin \
