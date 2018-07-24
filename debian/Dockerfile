@@ -1,4 +1,4 @@
-FROM golang:1.10
+FROM golang:1.10.3
 
 RUN set -x \
  && go get github.com/caddyserver/builds \
@@ -14,11 +14,9 @@ RUN set -x \
  && mv caddy /go/opt/bin/
 
 
-FROM buildpack-deps:stretch-curl
+FROM gcr.io/distroless/base
 
-COPY --from=0 /go/opt /opt
-
-ENV PATH=/opt/bin:${PATH}
+COPY --from=0 /go/opt/bin/caddy /
 
 EXPOSE 80 443
 
@@ -26,5 +24,5 @@ VOLUME /root
 
 WORKDIR /root
 
-CMD [ "caddy", "-agree" ]
+CMD [ "/caddy", "-agree" ]
 
