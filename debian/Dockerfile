@@ -1,4 +1,4 @@
-FROM golang:1.10.3
+FROM golang:1.11
 
 RUN set -x \
  && go get github.com/caddyserver/builds \
@@ -7,7 +7,7 @@ RUN set -x \
  && git checkout -b v0.11.0 \
  && cd caddy \
  && tail caddymain/run.go \
- && sed -i.bak -e 's/enableTelemetry = true/enableTelemetry = false/' caddymain/run.go \
+ && sed -i.bak -e 's/EnableTelemetry = true/EnableTelemetry = false/' caddymain/run.go \
  && tail caddymain/run.go \
  && go run build.go \
  && mkdir -p /go/opt/bin \
