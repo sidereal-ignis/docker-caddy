@@ -20,9 +20,9 @@ COPY --from=0 /go/opt/bin/caddy /
 
 EXPOSE 80 443
 
-VOLUME /root
+VOLUME /home
 
-WORKDIR /root
+WORKDIR /home
 
 CMD [ "/caddy", "-agree" ]
 
