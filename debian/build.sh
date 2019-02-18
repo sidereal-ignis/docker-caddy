@@ -6,7 +6,7 @@ mkdir -p /go/src/github.com/mholt
 pushd /go/src/github.com/mholt
 git clone https://github.com/mholt/caddy.git
 cd caddy
-git checkout -b v0.11.3 v0.11.3
+git checkout -b v0.11.4 v0.11.4
 git log -3
 git status
 popd
